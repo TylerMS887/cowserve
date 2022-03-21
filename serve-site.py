@@ -1,13 +1,19 @@
+import argparse
+parser = argparse.ArgumentParser(description='The free and open-source Project Cowserve web server.')
+parser.add_argument('port', metavar='N', type=int, nargs='+',
+                    help='Tell Cowserver where to start the server (site will be located at localhost:<port>)')
+arg = parse.parse_args()
+print("             PROJECT COWSERVE - cross-platform web server\n                     Current Cowserve Version: 1.0\n                      Press Ctrl+C to stop server")
 import os
+import sys
 import http.server
 import socketserver
-cd = os.getcwd()
-if not os.path.isdir(f"{cd}/gweb-site"):
-  raise FileNotFoundError(f"Could not locate gweb site at {cd}")
-PORT = 5020
+PORT = arg.port()
 Handler = http.server.SimpleHTTPRequestHandler
-os.chdir(cd + "/gweb-site")
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
-    print("serving at port", PORT)
-    httpd.serve_forever()
-os.chdir(cd)
+    print("Starting up at port", PORT = ".")
+    try:
+      httpd.serve_forever()
+    except KeyboardInterrupt:
+      print("Shutting down.")
+      sys.exit()

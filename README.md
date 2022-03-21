@@ -6,6 +6,10 @@ called *Project Cowserve*.
 For GNU/Linux, just download `cowserve.py`. For Windows, download `cowserve.exe` and add the directory to your
 `PATH`.
 
+Both files are at the [releases page](https://github.com/Tyler887/cowserve/releases/latest).
+
 ## Usage
 
-`cowsay [--port PORT]`
+```sh
+cowsay [--port PORT]
+```

@@ -1,9 +1,10 @@
 import argparse
+import questionary
 parser = argparse.ArgumentParser(description='The free and open-source Project Cowserve web server.', prog="cowserve")
 parser.add_argument('--port', metavar='port', type=int, nargs='+', default=4000,
                     help='Tell Cowserve where to start the server (site will be located at localhost:<port>)')
 arg = parser.parse_args()
-print("             PROJECT COWSERVE - cross-platform web server\n                     Current Cowserve Version: 1.0\n                      Press Ctrl+C to stop server")
+questionary.print("             PROJECT COWSERVE - cross-platform web server\n                     Current Cowserve Version: 1.0\n                      Press Ctrl+C to stop server", style="italic")
 import os
 import http.server
 import socketserver
@@ -13,9 +14,11 @@ PORT = PORT.replace("[", "")
 PORT = PORT.replace("]", "")
 PORT = int(PORT)
 if not os.path.isfile(f"{os.getcwd()}/index.html"):
-  with open(f"{os.getcwd()}/index.html", "w") as file:
-    email = input("Please enter your email: ")
-    file.write(f"""
+ addindex = questionary.confirm("Add an index.html?").ask()
+ if addindex:
+   with open(f"{os.getcwd()}/index.html", "w") as file:
+     email = input("Please enter your email: ")
+     file.write(f"""
           <title>Cowserve</title>
           <div align='center'>
           <h1>It works!</h1>
@@ -45,7 +48,6 @@ if not os.path.isfile(f"{os.getcwd()}/index.html"):
           If you find any bugs, please use the <a href='https://github.com/Tyler887/cowserve/issues'>issue tracker on GitHub</a>. Remember to search for
           existing issues before opening a new one.
     """)
-webbrowser.open(f"http://localhost:{str(PORT)}")
 Handler = http.server.SimpleHTTPRequestHandler
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
     print("Starting up at port", str(PORT) + ".")

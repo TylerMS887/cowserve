@@ -1,5 +1,6 @@
 import argparse
 import questionary
+import cowsay
 parser = argparse.ArgumentParser(description='The free and open-source Project Cowserve web server.', prog="cowserve")
 parser.add_argument('--port', metavar='port', type=int, nargs='+', default=4000,
                     help='Tell Cowserve where to start the server (site will be located at localhost:<port>)')
@@ -50,7 +51,7 @@ if not os.path.isfile(f"{os.getcwd()}/index.html"):
     """)
 Handler = http.server.SimpleHTTPRequestHandler
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
-    print("Starting up at port", str(PORT) + ".")
+    cowsay.cow("I'm starting up at port", str(PORT) + ".")
     try:
       httpd.serve_forever()
     except Exception as e:

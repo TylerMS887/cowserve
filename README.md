@@ -8,4 +8,4 @@ For GNU/Linux, just download `cowserve.py`. For Windows, download `cowserve.exe`
 
 ## Usage
 
-`cowsay PORT`
+`cowsay [--port PORT]`

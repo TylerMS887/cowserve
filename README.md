@@ -9,4 +9,4 @@ For GNU/Linux or other UN\*X systems, just download `cowserve.py`. For Windows, 
 You can also [get Cowserve onto other systems](https://github.com/Tyler887/cowserve/wiki/Install).
 ## Usage
 
-`cowsay PORT`
+`cowserve PORT`

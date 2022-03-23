@@ -1,5 +1,5 @@
 This is the Cowserve web server. It provides a secure cross-platform web server to serve friendly websites. The project itself is
-called *Project Cowserve*.
+called *Project Cowserve* and the application is a replacement for **Apache2**.
 
 ## Install
 

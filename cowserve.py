@@ -8,7 +8,6 @@ questionary.print("             PROJECT COWSERVE - cross-platform web server\n  
 import os
 import http.server
 import socketserver
-import webbrowser
 PORT = str(arg.port)
 PORT = PORT.replace("[", "")
 PORT = PORT.replace("]", "")

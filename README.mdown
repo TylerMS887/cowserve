@@ -7,6 +7,9 @@ For GNU/Linux or other UN\*X systems, just download `cowserve.py`. For Windows, 
 `PATH`.
 
 You can also [get Cowserve onto other systems](https://github.com/Tyler887/cowserve/wiki/Install).
+
 ## Usage
 
-`cowserve PORT`
+`cowserve [--port PORT]`
+
+`--port` should not contain any letters. Cowserve will render an error if it's not a valid `int` value.

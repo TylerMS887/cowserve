@@ -14,5 +14,5 @@ You can also [get Cowserve onto other systems](https://github.com/Tyler887/cowse
 
 `--port` should not contain any letters. Cowserve will render an error if it's not a valid `int` value.
 
-Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to end the server. This is useful in case of DoS or DDoS
+Press <kbd>Ctrl</kbd> + <kbd>C</kbd> (<kbd>⌘</kbd> + <kbd>C</kbd> on a Mac) to end the server. This is useful in case of DoS or DDoS
 attacks.

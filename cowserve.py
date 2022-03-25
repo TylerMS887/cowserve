@@ -50,7 +50,10 @@ if not os.path.isfile(f"{os.getcwd()}/index.html"):
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def send_error(self, code, message=None):
-        self.error_message_format = "Error %(code)d: %(message)s. Contact the admin for more info."
+        if os.path.isfile(f"{os.getcwd()}/&(code)d.html"):
+           self.error_message_format = open(f"{os.getcwd()}/&(code)d.html", "r").read()
+        else:
+          self.error_message_format = "Error %(code)d: %(message)s. Contact the admin for more info.\n<h1>If you are the admin:</h1>\nTo edit this message, create %(code)d.html in your server directory."
         http.server.SimpleHTTPRequestHandler.send_error(self, code, message)
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
     print("Starting up site at port", str(PORT) + ".")

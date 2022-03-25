@@ -24,5 +24,5 @@ We mainly discuss the work for Cowserve at [GitHub Discussions](https://github.c
 Note that questions about **using** Cowserve are off-topic and should be asked at [Server Fault](https://serverfault.com). When the server has crashed, use the [<kbd>server-crashes</kbd>](https://serverfault.com/questions/tagged/server-crashes) tag. For questions most likely caused by a (D)DoS attack, use the [<kbd>ddos</kbd>](https://serverfault.com/questions/tagged/ddos) or [<kbd>denial-of-service</kbd>](https://serverfault.com/questions/tagged/denial-of-service) tag.
 
 ## Links
-* [ServerFault](https://serverfault.com/queations/tagged/cowserve-http-server)
+* [ServerFault](https://serverfault.com/questions/tagged/cowserve-http-server)
 * [Cowserve Wiki](https://github.com/Tyler887/cowserve/wiki)

@@ -16,3 +16,9 @@ You can also [get Cowserve onto other systems](https://github.com/Tyler887/cowse
 
 Press <kbd>Ctrl</kbd> + <kbd>C</kbd> (<kbd>⌘</kbd> + <kbd>C</kbd> on a Mac) to end the server. This is useful in case of DoS or DDoS
 attacks.
+
+## Discussion
+
+We mainly discuss the work for Cowserve at [GitHub Discussions](https://github.com/Tyler887/cowserve/discussions).
+
+Note that questions about **using** Cowserve are off-topic and should be asked at [Server Fault](https://serverfault.com).

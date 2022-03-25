@@ -47,7 +47,9 @@ if not os.path.isfile(f"{os.getcwd()}/index.html"):
           If you find any bugs, please use the <a href='https://github.com/Tyler887/cowserve/issues'>issue tracker on GitHub</a>. Remember to search for
           existing issues before opening a new one.
     """)
+
 Handler = http.server.SimpleHTTPRequestHandler
+self.error_message_format = "Error %(code)d: %(message)s. Try contacting the administrator."
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
     print("Starting up site at port", str(PORT) + ".")
     try:

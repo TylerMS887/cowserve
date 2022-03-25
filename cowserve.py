@@ -48,8 +48,10 @@ if not os.path.isfile(f"{os.getcwd()}/index.html"):
           existing issues before opening a new one.
     """)
 
-Handler = http.server.SimpleHTTPRequestHandler
-self.error_message_format = "\Error %(code)d: %(message)s. Try contacting the administrator."
+class MyHandler(SimpleHTTPRequestHandler):
+    def send_error(self, code, message=None):
+            self.error_message_format = "Error %(code)d: %(message)s. Contact the admin for more info."
+        SimpleHTTPRequestHandler.send_error(self, code, message)
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
     print("Starting up site at port", str(PORT) + ".")
     try:

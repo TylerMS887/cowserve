@@ -23,4 +23,4 @@ Can usally be found under `Press Ctrl+C to stop server`.
 **Cowserve version (usally displayed on launch)**:
 **(On BASH command line) Did you do the `alias` experiment to make the `cowserve` command work?** <!-- YES or NO -->
 
-### Note: Your issue will be closed without any explanation of you do not provide the required info above.
+### `Note: Your issue will be closed without any explanation if you do not provide the required info above.`

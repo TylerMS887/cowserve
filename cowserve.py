@@ -49,7 +49,7 @@ if not os.path.isfile(f"{os.getcwd()}/index.html"):
     """)
 
 Handler = http.server.SimpleHTTPRequestHandler
-self.error_message_format = "Error %(code)d: %(message)s. Try contacting the administrator."
+self.error_message_format = "\Error %(code)d: %(message)s. Try contacting the administrator."
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
     print("Starting up site at port", str(PORT) + ".")
     try:

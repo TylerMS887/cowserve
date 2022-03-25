@@ -68,7 +68,6 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             with open(f"{os.getcwd()}/404.html", "r") as NotFoundPage:
               self.error_message_format = NotFoundPage.read()
           else:
-             print("To customise your 404 page, just create 404.html in your server directory!")
              self.error_message_format = f"""
              <title>Maze found - Cowserve</title>
              <pre>
@@ -76,6 +75,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
              404 Not Found. Contact the admin for more info.
              </pre>
              <a href="https://codegolf.stackexchange.com/q/162403">Thanks Stack Exchange</a> for the maze, subject to the <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC license</a>! :)
+             <br /><small>This page can be changed or removed by creating the <code>404.html</code> file.</small>
              """
         else:
           self.error_message_format = "Error %(code)d: %(message)s. Contact the admin for more info. :("

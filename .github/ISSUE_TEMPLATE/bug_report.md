@@ -2,10 +2,11 @@
 name: Bug report
 about: Create a report to help us improve
 title: "[BUG] "
-labels: bug
+labels: bug, needs triage
 assignees: ''
 
 ---
+
 **If you are asking how to use Cowserve please ask on Server Fault with the [<kbd>cowserve-http-server</kbd>](https://serverfault.com/questions/tagged/cowserve-http-server) tag.**
 
 ## Cowserve command line logs <!-- Required -->

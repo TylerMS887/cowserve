@@ -2,10 +2,11 @@
 name: Feature request
 about: Suggest an idea for this project
 title: "[FEAT] "
-labels: enhancement
+labels: enhancement, needs triage
 assignees: ''
 
 ---
+
 **If you are asking how to use Cowserve please ask on Server Fault with the [<kbd>cowserve-http-server</kbd>](https://serverfault.com/questions/tagged/cowserve-http-server) tag.**
 
 ## Is your feature request related to a problem? Please describe. (Optional)

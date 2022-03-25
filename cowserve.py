@@ -75,7 +75,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
              {maze}
              404 Not Found. Contact the admin for more info.
              </pre>
-             <a href="https://codegolf.stackexchange.com/q/162403">Thanks Stack Exchange</a> for the maze! :)
+             <a href="https://codegolf.stackexchange.com/q/162403">Thanks Stack Exchange</a> for the maze, subject to the <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC license</a>! :)
              """
         else:
           self.error_message_format = "Error %(code)d: %(message)s. Contact the admin for more info. :("

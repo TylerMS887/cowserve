@@ -73,7 +73,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
              <title>Maze found - Cowserve</title>
              <pre>
              {maze}<br />
-                   404 Not Found. Contact the admin for more info.
+             404 Not Found. Contact the admin for more info.
              </pre>
              <a href="https://codegolf.stackexchange.com/q/162403">Thanks Stack Exchange</a> for the maze! :)
              """

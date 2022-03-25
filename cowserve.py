@@ -63,7 +63,7 @@ if not os.path.isfile(f"{os.getcwd()}/index.html"):
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def send_error(self, code, message=None):
-        if code = 404:
+        if 404 = code: # due to SyntaxError: invalid syntax
           if os.path.isfile(f"{os.getcwd()}/404.html"):
             with open(f"{os.getcwd()}/404.html", "r") as NotFoundPage:
               self.error_message_format = NotFoundPage.read()

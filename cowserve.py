@@ -48,7 +48,7 @@ if not os.path.isfile(f"{os.getcwd()}/index.html"):
           existing issues before opening a new one.
     """)
 
-class MyHandler(http.server.SimpleHTTPRequestHandler):
+class Handler(http.server.SimpleHTTPRequestHandler):
     def send_error(self, code, message=None):
         self.error_message_format = "Error %(code)d: %(message)s. Contact the admin for more info."
         http.server.SimpleHTTPRequestHandler.send_error(self, code, message)

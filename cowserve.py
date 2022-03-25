@@ -1,5 +1,18 @@
 import argparse
 import questionary
+maze = """
+--------+-------+
+        |       |
+| --+-+ | ----+ |
+|   | | |     | |
+| + | | +---- | |
+|   | |       | | 
++-- | +----+- | |
+|   | |    |  | | 
+| --+ | ++ | -+
+|     | ++    |  
++-----+-++----+--
+""" # https://codegolf.stackexchange.com/q/162403
 parser = argparse.ArgumentParser(description='The free and open-source Project Cowserve web server.', prog="cowserve")
 parser.add_argument('--port', metavar='port', type=int, nargs='+', default=4000,
                     help='Tell Cowserve where to start the server (site will be located at localhost:<port>)')
@@ -50,10 +63,22 @@ if not os.path.isfile(f"{os.getcwd()}/index.html"):
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def send_error(self, code, message=None):
-        if os.path.isfile(f"{os.getcwd()}/&(code)d.html"):
-           self.error_message_format = open(f"{os.getcwd()}/&(code)d.html", "r").read()
+        if code = 404:
+          if os.path.isfile(f"{os.getcwd()}/404.html"):
+            with open(f"{os.getcwd()}/404.html", "r") as NotFoundPage:
+              self.error_message_format = NotFoundPage.read()
+          else:
+             print("To customise your 404 page, just create 404.html in your server directory!")
+             self.error_message_format = f"""
+             <title>Maze found - Cowserve</title>
+             <pre>
+             {maze}<br />
+                   404 Not Found. Contact the admin for more info.
+             </pre>
+             <a href="https://codegolf.stackexchange.com/q/162403">Thanks Stack Exchange</a> for the maze! :)
+             """
         else:
-          self.error_message_format = "Error %(code)d: %(message)s. Contact the admin for more info.\n<h1>If you are the admin:</h1>\nTo edit this message, create %(code)d.html in your server directory."
+          self.error_message_format = "Error %(code)d: %(message)s. Contact the admin for more info. :("
         http.server.SimpleHTTPRequestHandler.send_error(self, code, message)
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
     print("Starting up site at port", str(PORT) + ".")

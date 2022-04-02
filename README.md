@@ -1,5 +1,7 @@
 This is the Cowserve web server. It provides a secure cross-platform web server to serve friendly websites. The project itself is
-called *Project Cowserve* and the application is a replacement for **Apache2**.
+called *Project Cowserve* and the application is a replacement for Apache2 (and [other servers][serverlist]).
+
+[serverlist]: https://github.com/Tyler887/cowserve/wiki/Comparison
 
 ## Install
 

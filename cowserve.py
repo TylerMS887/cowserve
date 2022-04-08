@@ -75,10 +75,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
              404 Not Found. Contact the admin for more info.
              </pre>
              <a href="https://codegolf.stackexchange.com/q/162403">Thanks Stack Exchange</a> for the maze, subject to the <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC license</a>! :)
-             <br /><small>This page can be changed or removed by creating the <code>404.html</code> file.</small>
+             <br /><small>You are seeing this page because <code>404.html</code> does not exist in the root of the server and you
+             have opened an invalid URL. You may have followed a broken link. Webmasters can change this page by creating the <code>404.html</code> file.</small>
              """
+        elif code == 451:
+             self.error_message_format = "This site is censored in your country or region. This is most likely that you are accessing a censored Cowserve site from Mainland China or that you are in Europe and the site does not comply with GPDR. Use a proxy, e.g. Tor, to bypass this, but note that Tor may be blocked on this site. Cowserve does not have a tool to avoid UFLR (Unavailable for Legal Reasons/HTTP 451) errors. If you are in the EU, learn more about this error code at <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451'>the documentation page on MDN</a>."
         else:
-          self.error_message_format = "Error %(code)d: %(message)s. Contact the admin for more info. :("
+          self.error_message_format = "Error %(code)d: %(message)s. Contact the admin for more info."
         http.server.SimpleHTTPRequestHandler.send_error(self, code, message)
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
     print("Starting up site at port", str(PORT) + ".")

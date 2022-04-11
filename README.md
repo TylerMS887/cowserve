@@ -5,7 +5,7 @@ called *Project Cowserve* and the application is a replacement for Apache2 (and 
 
 ## Install
 
-For GNU/Linux or other UN\*X systems, just download `cowserve.py`. For Windows, download `cowserve.exe` and add the directory to your
+For GNU/Linux or other UN\*X systems, just download `install-unix.sh`. For Windows, download `cowserve.exe` and add the directory to your
 `PATH`.
 
 You can also [get Cowserve onto other systems](https://github.com/Tyler887/cowserve/wiki/Install).

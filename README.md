@@ -12,7 +12,7 @@ You can also [get Cowserve onto other systems](https://github.com/Tyler887/cowse
 
 ## Usage
 
-`cowserve [--port PORT]`
+`cowserve [--port XX[XX]]`
 
 `--port` should not contain any letters. Cowserve will render an error if it's not a valid `int` value.
 

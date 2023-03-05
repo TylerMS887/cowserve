@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: pip install questionary
       - name: Build exe
-        run: python -m pyinstaller cowserve.py -F -n cowserve --noupx -c
+        run: python -m PyInstaller cowserve.py -F -n cowserve --noupx -c
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
         with:

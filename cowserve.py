@@ -29,14 +29,13 @@ if not os.path.isfile(f"{os.getcwd()}/index.html"):
  addindex = questionary.confirm("Add an index.html?").ask()
  if addindex:
    with open(f"{os.getcwd()}/index.html", "w") as file:
-     email = input("Please enter your email: ")
      file.write(f"""
           <title>Cowserve</title>
           <div align='center'>
           <h1>It works!</h1>
           </div>
           This page is used to test proper installation of Cowserve. You should edit this file, <code>index.html</code>, before continuing.
-          If you are a regular user of this website, and did not expect this page, contact the <a href='mailto:{email}'>site's admin</a>.
+          If you are a regular user of this website, and did not expect this page, contact the site's admin.
           <h2>About Cowserve</h2>
           <b>Cowserve</b> (also known as <b>Project Cowserve</b>) is a <a href='https://en.wikipedia.org/wiki/Free_and_open-source_software'>free and open-source</a>
           web server written in a free and open-source programming language, Python. It supports many features, including:

@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Windows CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install PyInstaller
+        run: pip install pyinstaller
+      - name: Install dependencies
+        run: pip install questionary
+      - name: Build exe
+        run: python -m pyinstaller cowserve.py -F -n cowserve --noupx -c
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+           name: windows
+           path: cowserve.exe

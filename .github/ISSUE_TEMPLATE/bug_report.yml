@@ -23,4 +23,3 @@ body:
     label: "Actual behaviour"
   validations:
     required: true
-```

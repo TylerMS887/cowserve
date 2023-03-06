@@ -1,4 +1,4 @@
-# This is a basic workflow to help you get started with Actions
+# A small workflow to generate an exe
 
 name: Windows CI
 
@@ -10,9 +10,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  ntbuild:
     runs-on: windows-latest
-
     steps:
       - uses: actions/checkout@v3
       - name: Install PyInstaller
@@ -20,9 +19,9 @@ jobs:
       - name: Install dependencies
         run: pip install questionary
       - name: Build exe
-        run: python -m PyInstaller cowserve.py -F -n cowserve --noupx -c
+        run: python -m PyInstaller ${GITHUB_WORKSPACE}/cowserve.py -F -n cowserve --noupx -c
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
         with:
-           name: windows
-           path: cowserve.exe
+           name: cowserve-ntbuild
+           path: ${GITHUB_WORKSPACE}/cowserve.exe

@@ -1,0 +1,30 @@
+# THIS ISSUE TEMPLATE IS STILL IN DEVELOPMENT
+# 
+# It is not actually used yet and is very likely to
+# be used officially by Project Cowserve.
+
+name: Bug report
+description: Create a report to help us improve
+title: "[BUG] "
+labels: bug, needs triage
+body:
+- type: textarea
+  id: log
+  attributes:
+    label: Logs
+    description: "Copy and paste the Cowserve logs here."
+  validations:
+    render: text
+    required: true
+- type: input
+  id: expect
+  attributes:
+    label: "Expected behaviour"
+  validations:
+    required: true
+- type: input
+  id: real
+  attributes:
+    label: "Actual behaviour"
+  validations:
+    required: true
